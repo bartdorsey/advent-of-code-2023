@@ -8,21 +8,12 @@ export function day1part1(data: string): number {
         let first: number | null = null;
         let last: number | null = null;
         for (let i = 0; i < line.length; i++) {
-            if (first) {
-                continue;
-            }
             const num = Number(line[i]);
             if (!isNaN(num)) {
-                first = num;
-            }
-        }
-        for (let j = line.length - 1; j >= 0; j--) {
-            if (last) {
-                continue;
-            }
-            const num = Number(line[j]);
-            if (!isNaN(num)) {
                 last = num;
+                if (!first) {
+                    first = num;
+                }
             }
         }
         if (first && last) {
@@ -106,35 +97,22 @@ export function day1part2(data: string) {
         let last: number | null = null;
         // Find the first number
         for (let i = 0; i < line.length; i++) {
-            if (first) {
-                continue;
-            }
             const num = Number(line[i]);
             if (!isNaN(num)) {
-                first = num;
+                last = num;
+                if (!first) {
+                    first = num;
+                }
             } else {
                 const firstWord = findWord(words, line.slice(i, line.length));
                 if (firstWord) {
-                    first = string2num(firstWord);
+                    last = string2num(firstWord);
+                    if (!first) {
+                        first = string2num(firstWord);
+                    }
                 }
             }
         }
-        // find the last number
-        for (let j = line.length - 1; j >= 0; j--) {
-            if (last) {
-                continue;
-            }
-            const num = Number(line[j]);
-            if (!isNaN(num)) {
-                last = num;
-            } else {
-                const lastWord = findWord(words, line.slice(j, line.length));
-                if (lastWord) {
-                    last = string2num(lastWord);
-                }
-            }
-        }
-        // Combine the numbers into a double digit number
         if (first && last) {
             const newNumber = Number(`${first}${last}`);
             digits.push(newNumber);
