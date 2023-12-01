@@ -1,10 +1,14 @@
 {
+    "main": "src/index.ts",
     "dependencies": {
         "commander": "^11.1.0"
     },
     "name": "typescript",
     "module": "index.ts",
     "type": "module",
+    "scripts": {
+        "watch": "bun --watch src/index.ts"
+    },
     "devDependencies": {
         "bun-types": "latest"
     },
