@@ -1,4 +1,4 @@
-export async function day1part1(data: string): Promise<number> {
+export function day1part1(data: string): number {
     const lines = data.split('\n');
     const digits = [];
     for (const line of lines) {
@@ -94,7 +94,7 @@ function findWord(words: string[], str: string): string | null {
     return null;
 }
 
-export async function day1part2(data: string) {
+export function day1part2(data: string) {
     const lines = data.split('\n');
     const digits = [];
     for (const line of lines) {

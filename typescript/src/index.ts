@@ -25,8 +25,8 @@ xtwone3four
 zoneight234
 7pqrstsixteen`;
         console.log('Running Day 1');
-        console.log('Part 1 = ', await day1part1(part1test));
-        console.log('Part 2 = ', await day1part2(part2test));
-        console.log('Part 1 = ', await day1part1(contents));
-        console.log('Part 2 = ', await day1part2(contents));
+        console.log('Part 1 = ', day1part1(part1test));
+        console.log('Part 2 = ', day1part2(part2test));
+        console.log('Part 1 = ', day1part1(contents));
+        console.log('Part 2 = ', day1part2(contents));
 }
