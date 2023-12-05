@@ -74,9 +74,10 @@ function processLines(
         // count the card
         cards_counts[card] =
             cards_counts[card] === undefined ? 1 : cards_counts[card] + 1;
-        const new_num_copies = card_copies[card]
-            ? card_copies[card]
-            : processLine(card, line);
+        const new_num_copies =
+            card_copies[card] !== undefined
+                ? card_copies[card]
+                : processLine(card, line);
 
         current_index++;
         cards_counts = processLines(

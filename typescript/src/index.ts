@@ -72,10 +72,13 @@ Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1
 Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
 Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
 Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`;
-        console.log('Running Day 4');
-        // console.log('Part 1 = ', day4part1(part4test));
-        // console.log('Part 1 = ', day4part1(contents));
+        console.time('Day 4 Part 1');
+        console.log('Part 1 = ', day4part1(part4test));
+        console.log('Part 1 = ', day4part1(contents));
+        console.timeEnd('Day 4 Part 1');
+        console.time('Day 4 Part 2');
         console.log('Part 2 = ', day4part2(part4test));
         console.log('Part 2 = ', day4part2(contents));
+        console.timeEnd('Day 4 Part 2');
     }
 }
