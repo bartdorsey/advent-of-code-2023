@@ -3,14 +3,8 @@ export function day4part1(data: string) {
     let total = 0;
     for (const line of lines) {
         const [_, winners_str, numbers_str] = line.split(/: | \| /);
-        const winners = winners_str
-            .split(/\s+/)
-            .map((w) => parseInt(w))
-            .filter((w) => !isNaN(w));
-        const numbers = numbers_str
-            .split(/\s+/)
-            .map((w) => parseInt(w))
-            .filter((w) => !isNaN(w));
+        const winners = winners_str.split(/\s+/);
+        const numbers = numbers_str.split(/\s+/);
         let points = 0;
         for (const n of numbers) {
             if (winners.includes(n)) {
@@ -37,9 +31,7 @@ function processLine(card: string, line: string): number {
     let num_copies = 0;
     const [_, winners_str, numbers_str] = line.split(/:\s+|\s+\|\s+/);
     const winners = winners_str.split(/\s+/);
-    console.log(winners);
     const numbers = numbers_str.split(/\s+/);
-    console.log(numbers);
     for (const n of numbers) {
         if (winners.includes(n)) {
             num_copies += 1;
